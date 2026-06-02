@@ -9,15 +9,15 @@
 - [x] Add ProcessingLog entity
 - [x] Add UserRepository
 - [x] Add ProcessingLogRepository
-- [ ] Run auth-api with PostgreSQL using Docker
+- [x] Run auth-api with PostgreSQL using Docker
 
 ### Stage 2 — Registration
-- [ ] Create DTOs for register request
-- [ ] Create AuthService
-- [ ] Hash password with BCrypt
-- [ ] Save user to database
-- [ ] Add POST /api/auth/register
-- [ ] Test registration with curl/Postman
+- [x] Create DTOs for register request
+- [x] Create AuthService
+- [x] Hash password with BCrypt
+- [x] Save user to database
+- [x] Add POST /api/auth/register
+- [x] Test registration with curl/Postman
 
 ### Stage 3 — Login and JWT
 - [ ] Create login DTO
