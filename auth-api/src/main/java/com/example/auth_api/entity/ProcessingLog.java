@@ -16,12 +16,13 @@ public class ProcessingLog {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(nullable = false)
+    @Column(name = "input_text", nullable = false, columnDefinition = "TEXT")
     private String inputText;
 
-    @Column(nullable = false)
+    @Column(name = "output_text", nullable = false, columnDefinition = "TEXT")
     private String outputText;
 
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     @PrePersist
@@ -29,17 +30,39 @@ public class ProcessingLog {
         createdAt = LocalDateTime.now();
     }
 
-    public UUID getId() { return id; }
-    public void setId(UUID id) { this.id = id; }
+    public UUID getId() { 
+        return id; 
+    }
 
-    public User getUser() { return user; }
-    public void setUser(User user) { this.user = user; }
+    public void setId(UUID id) { 
+        this.id = id; 
+    }
 
-    public String getInputText() { return inputText; }
-    public void setInputText(String inputText) { this.inputText = inputText; }
+    public User getUser() { 
+        return user; 
+    }
 
-    public String getOutputText() { return outputText; }
-    public void setOutputText(String outputText) { this.outputText = outputText; }
+    public void setUser(User user) { 
+        this.user = user; 
+    }
 
-    public LocalDateTime getCreatedAt() { return createdAt; }
+    public String getInputText() { 
+        return inputText; 
+    }
+
+    public void setInputText(String inputText) { 
+        this.inputText = inputText; 
+    }
+
+    public String getOutputText() { 
+        return outputText; 
+    }
+
+    public void setOutputText(String outputText) { 
+        this.outputText = outputText; 
+    }
+
+    public LocalDateTime getCreatedAt() { 
+        return createdAt; 
+    }
 }

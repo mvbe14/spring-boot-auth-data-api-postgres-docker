@@ -1,0 +1,41 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: spring-postgres
+    environment:
+      POSTGRES_DB: app_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  auth-api:
+    build:
+      context: ./auth-api
+    container_name: auth-api
+    ports:
+      - "8080:8080"
+    environment:
+      POSTGRES_URL: jdbc:postgresql://postgres:5432/app_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      JWT_SECRET: dev-jwt-secret-change-later
+      INTERNAL_TOKEN: dev-internal-token
+    depends_on:
+      - postgres
+
+  data-api:
+    build:
+      context: ./data-api
+    container_name: data-api
+    ports:
+      - "8081:8081"
+    environment:
+      INTERNAL_TOKEN: dev-internal-token
+    depends_on:
+      - auth-api
+
+volumes:
+  postgres_data:
