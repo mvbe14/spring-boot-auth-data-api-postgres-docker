@@ -21,7 +21,7 @@ services:
       POSTGRES_URL: jdbc:postgresql://postgres:5432/app_db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      JWT_SECRET: dev-jwt-secret-change-later
+      JWT_SECRET: dev-jwt-secret-key-for-learning-project-please-change-later-123456
       INTERNAL_TOKEN: dev-internal-token
     depends_on:
       - postgres
@@ -34,8 +34,6 @@ services:
       - "8081:8081"
     environment:
       INTERNAL_TOKEN: dev-internal-token
-    depends_on:
-      - auth-api
 
 volumes:
   postgres_data:

@@ -1,5 +1,7 @@
 package com.example.auth_api.controller;
 
+import com.example.auth_api.dto.LoginRequest;
+import com.example.auth_api.dto.LoginResponse;
 import com.example.auth_api.dto.RegisterRequest;
 import com.example.auth_api.service.AuthService;
 import org.springframework.http.HttpStatus;
@@ -20,5 +22,11 @@ public class AuthController {
     public ResponseEntity<Void> register(@RequestBody RegisterRequest request) {
         authService.register(request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest request) {
+        LoginResponse response = authService.login(request);
+        return ResponseEntity.ok(response);
     }
 }

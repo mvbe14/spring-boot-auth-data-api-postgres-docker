@@ -20,7 +20,7 @@
 - [x] Test registration with curl/Postman
 
 ### Stage 3 — Login and JWT
-- [ ] Create login DTO
+- [x] Create login DTO
 - [ ] Validate email and password
 - [ ] Generate JWT token
 - [ ] Return token to client
