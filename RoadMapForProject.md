@@ -21,7 +21,7 @@
 
 ### Stage 3 — Login and JWT
 - [x] Create login DTO
-- [ ] Validate email and password
+- [x] Validate email and password
 - [ ] Generate JWT token
 - [ ] Return token to client
 - [ ] Test login
