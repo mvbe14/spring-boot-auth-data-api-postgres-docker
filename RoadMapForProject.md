@@ -22,9 +22,9 @@
 ### Stage 3 — Login and JWT
 - [x] Create login DTO
 - [x] Validate email and password
-- [ ] Generate JWT token
-- [ ] Return token to client
-- [ ] Test login
+- [x] Generate JWT token
+- [x] Return token to client
+- [x] Test login
 
 ### Stage 4 — Security
 - [ ] Configure Spring Security
