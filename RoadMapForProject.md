@@ -27,7 +27,7 @@
 - [x] Test login
 
 ### Stage 4 — Security
-- [ ] Configure Spring Security need to know what is it
+- [ ] Configure Spring Security
 - [ ] Add JWT filter
 - [ ] Protect /api/process
 - [ ] Leave /api/auth/register and /api/auth/login public

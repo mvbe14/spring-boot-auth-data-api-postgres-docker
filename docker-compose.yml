@@ -3,9 +3,9 @@ services:
     image: postgres:16
     container_name: spring-postgres
     environment:
-      POSTGRES_DB: app_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
     volumes:
@@ -18,11 +18,11 @@ services:
     ports:
       - "8080:8080"
     environment:
-      POSTGRES_URL: jdbc:postgresql://postgres:5432/app_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      JWT_SECRET: dev-jwt-secret-key-for-learning-project-please-change-later-123456
-      INTERNAL_TOKEN: dev-internal-token
+      POSTGRES_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      INTERNAL_TOKEN: ${INTERNAL_TOKEN}
     depends_on:
       - postgres
 
@@ -33,7 +33,7 @@ services:
     ports:
       - "8081:8081"
     environment:
-      INTERNAL_TOKEN: dev-internal-token
+      INTERNAL_TOKEN: ${INTERNAL_TOKEN}
 
 volumes:
   postgres_data:
