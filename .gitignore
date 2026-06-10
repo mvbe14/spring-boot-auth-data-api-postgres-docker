@@ -1,22 +1,17 @@
-    # IDE settings
+# Environment variables
+.env
+
+# IDE settings
 .vscode/
 .idea/
 
-# Maven / Java
+# Java / Maven
 target/
 *.class
 
 # Logs
 *.log
 
-# Environment variables
-.env
-
 # OS files
 .DS_Store
 Thumbs.db
-
-
-### Secrets ###
-.env
-
