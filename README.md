@@ -128,10 +128,10 @@ Implemented:
 * BCrypt password hashing
 * login endpoint
 * JWT token generation
+* JWT validation 
 
 Next steps:
 
-* JWT validation
 * protected `/api/process` endpoint
 * communication between `auth-api` and `data-api`
 * saving processing logs
